@@ -9,8 +9,62 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as ProgressRouteImport } from './routes/progress'
+import { Route as PmRoadmapRouteImport } from './routes/pm-roadmap'
+import { Route as PlacementsRouteImport } from './routes/placements'
+import { Route as NotesRouteImport } from './routes/notes'
+import { Route as ExecutionRouteImport } from './routes/execution'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as AiRoadmapRouteImport } from './routes/ai-roadmap'
+import { Route as AdobeRouteImport } from './routes/adobe'
 import { Route as IndexRouteImport } from './routes/index'
 
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressRoute = ProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PmRoadmapRoute = PmRoadmapRouteImport.update({
+  id: '/pm-roadmap',
+  path: '/pm-roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlacementsRoute = PlacementsRouteImport.update({
+  id: '/placements',
+  path: '/placements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesRoute = NotesRouteImport.update({
+  id: '/notes',
+  path: '/notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutionRoute = ExecutionRouteImport.update({
+  id: '/execution',
+  path: '/execution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AiRoadmapRoute = AiRoadmapRouteImport.update({
+  id: '/ai-roadmap',
+  path: '/ai-roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AdobeRoute = AdobeRouteImport.update({
+  id: '/adobe',
+  path: '/adobe',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +73,158 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/adobe': typeof AdobeRoute
+  '/ai-roadmap': typeof AiRoadmapRoute
+  '/analytics': typeof AnalyticsRoute
+  '/execution': typeof ExecutionRoute
+  '/notes': typeof NotesRoute
+  '/placements': typeof PlacementsRoute
+  '/pm-roadmap': typeof PmRoadmapRoute
+  '/progress': typeof ProgressRoute
+  '/resources': typeof ResourcesRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/adobe': typeof AdobeRoute
+  '/ai-roadmap': typeof AiRoadmapRoute
+  '/analytics': typeof AnalyticsRoute
+  '/execution': typeof ExecutionRoute
+  '/notes': typeof NotesRoute
+  '/placements': typeof PlacementsRoute
+  '/pm-roadmap': typeof PmRoadmapRoute
+  '/progress': typeof ProgressRoute
+  '/resources': typeof ResourcesRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/adobe': typeof AdobeRoute
+  '/ai-roadmap': typeof AiRoadmapRoute
+  '/analytics': typeof AnalyticsRoute
+  '/execution': typeof ExecutionRoute
+  '/notes': typeof NotesRoute
+  '/placements': typeof PlacementsRoute
+  '/pm-roadmap': typeof PmRoadmapRoute
+  '/progress': typeof ProgressRoute
+  '/resources': typeof ResourcesRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths:
+    | '/'
+    | '/adobe'
+    | '/ai-roadmap'
+    | '/analytics'
+    | '/execution'
+    | '/notes'
+    | '/placements'
+    | '/pm-roadmap'
+    | '/progress'
+    | '/resources'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to:
+    | '/'
+    | '/adobe'
+    | '/ai-roadmap'
+    | '/analytics'
+    | '/execution'
+    | '/notes'
+    | '/placements'
+    | '/pm-roadmap'
+    | '/progress'
+    | '/resources'
+  id:
+    | '__root__'
+    | '/'
+    | '/adobe'
+    | '/ai-roadmap'
+    | '/analytics'
+    | '/execution'
+    | '/notes'
+    | '/placements'
+    | '/pm-roadmap'
+    | '/progress'
+    | '/resources'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AdobeRoute: typeof AdobeRoute
+  AiRoadmapRoute: typeof AiRoadmapRoute
+  AnalyticsRoute: typeof AnalyticsRoute
+  ExecutionRoute: typeof ExecutionRoute
+  NotesRoute: typeof NotesRoute
+  PlacementsRoute: typeof PlacementsRoute
+  PmRoadmapRoute: typeof PmRoadmapRoute
+  ProgressRoute: typeof ProgressRoute
+  ResourcesRoute: typeof ResourcesRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progress': {
+      id: '/progress'
+      path: '/progress'
+      fullPath: '/progress'
+      preLoaderRoute: typeof ProgressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pm-roadmap': {
+      id: '/pm-roadmap'
+      path: '/pm-roadmap'
+      fullPath: '/pm-roadmap'
+      preLoaderRoute: typeof PmRoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/placements': {
+      id: '/placements'
+      path: '/placements'
+      fullPath: '/placements'
+      preLoaderRoute: typeof PlacementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes': {
+      id: '/notes'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/execution': {
+      id: '/execution'
+      path: '/execution'
+      fullPath: '/execution'
+      preLoaderRoute: typeof ExecutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/ai-roadmap': {
+      id: '/ai-roadmap'
+      path: '/ai-roadmap'
+      fullPath: '/ai-roadmap'
+      preLoaderRoute: typeof AiRoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/adobe': {
+      id: '/adobe'
+      path: '/adobe'
+      fullPath: '/adobe'
+      preLoaderRoute: typeof AdobeRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +237,15 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AdobeRoute: AdobeRoute,
+  AiRoadmapRoute: AiRoadmapRoute,
+  AnalyticsRoute: AnalyticsRoute,
+  ExecutionRoute: ExecutionRoute,
+  NotesRoute: NotesRoute,
+  PlacementsRoute: PlacementsRoute,
+  PmRoadmapRoute: PmRoadmapRoute,
+  ProgressRoute: ProgressRoute,
+  ResourcesRoute: ResourcesRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
