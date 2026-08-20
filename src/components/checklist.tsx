@@ -19,11 +19,7 @@ export function Checklist({ items, dense }: { items: ChecklistItem[]; dense?: bo
                 done && "text-muted-foreground",
               )}
             >
-              <Checkbox
-                checked={done}
-                onCheckedChange={() => toggle(item.id)}
-                className="mt-0.5"
-              />
+              <Checkbox checked={done} onCheckedChange={() => toggle(item.id)} className="mt-0.5" />
               <span className={cn("flex-1 leading-snug", done && "line-through")}>
                 {item.text}
                 {item.hint && (

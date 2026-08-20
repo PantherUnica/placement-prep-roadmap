@@ -1,15 +1,18 @@
 import { Link, useRouterState } from "@tanstack/react-router";
 import {
   LayoutDashboard,
-  Briefcase,
-  Bot,
+  TrendingUp,
+  CalendarDays,
+  CheckSquare,
   Compass,
   BarChart3,
-  Target,
-  CheckSquare,
+  Cpu,
+  Target as TargetIcon,
+  Globe2,
+  MessageSquareText,
   Library,
+  RotateCcw,
   NotebookPen,
-  TrendingUp,
 } from "lucide-react";
 import {
   Sidebar,
@@ -31,29 +34,27 @@ const sections = [
     items: [
       { title: "Dashboard", url: "/", icon: LayoutDashboard },
       { title: "Progress", url: "/progress", icon: TrendingUp },
+      { title: "Roadmap", url: "/roadmap", icon: CalendarDays },
     ],
   },
   {
-    label: "Execution",
+    label: "Learning tracks",
     items: [
-      { title: "Adobe Internship", url: "/adobe", icon: Briefcase },
-      { title: "Daily / Weekly", url: "/execution", icon: CheckSquare },
-    ],
-  },
-  {
-    label: "Learning",
-    items: [
-      { title: "Agentic AI", url: "/ai-roadmap", icon: Bot },
-      { title: "Product Mgmt", url: "/pm-roadmap", icon: Compass },
+      { title: "Product", url: "/product", icon: Compass },
       { title: "Analytics", url: "/analytics", icon: BarChart3 },
+      { title: "Tech & GenAI", url: "/tech", icon: Cpu },
+      { title: "Business & Growth", url: "/business", icon: TargetIcon },
+      { title: "Domain Knowledge", url: "/domain", icon: Globe2 },
     ],
   },
   {
-    label: "Career",
+    label: "Practice",
     items: [
-      { title: "Placements", url: "/placements", icon: Target },
-      { title: "Resources", url: "/resources", icon: Library },
-      { title: "Notes", url: "/notes", icon: NotebookPen },
+      { title: "Daily / Weekly", url: "/execution", icon: CheckSquare },
+      { title: "Interview Prep", url: "/interview", icon: MessageSquareText },
+      { title: "Revision Queue", url: "/revision", icon: RotateCcw },
+      { title: "Resource Library", url: "/resources", icon: Library },
+      { title: "Notes & Journal", url: "/notes", icon: NotebookPen },
     ],
   },
 ];
@@ -66,11 +67,11 @@ export function AppSidebar() {
       <SidebarHeader className="border-b">
         <div className="flex items-center gap-2 px-2 py-1.5">
           <div className="flex h-7 w-7 items-center justify-center rounded-md bg-foreground text-background text-xs font-semibold">
-            AR
+            PP
           </div>
           <div className="flex flex-col leading-tight group-data-[collapsible=icon]:hidden">
-            <span className="text-sm font-semibold">Career OS</span>
-            <span className="text-[11px] text-muted-foreground">Aditya Raj · 60 days</span>
+            <span className="text-sm font-semibold">Placement Prep OS</span>
+            <span className="text-[11px] text-muted-foreground">10-week readiness system</span>
           </div>
         </div>
       </SidebarHeader>

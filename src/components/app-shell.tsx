@@ -21,7 +21,9 @@ export function AppShell({ children }: { children: ReactNode }) {
           </div>
         </header>
         <main className="mx-auto w-full max-w-6xl px-4 py-6 sm:px-6 sm:py-8">
-          {hydrated ? children : (
+          {hydrated ? (
+            children
+          ) : (
             <div className="flex h-[60vh] items-center justify-center text-sm text-muted-foreground">
               Loading…
             </div>

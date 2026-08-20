@@ -68,14 +68,26 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Career OS — Aditya Raj" },
-      { name: "description", content: "Personal career operating system for the next 60 days." },
-      { property: "og:title", content: "Career OS — Aditya Raj" },
-      { name: "twitter:title", content: "Career OS — Aditya Raj" },
-      { property: "og:description", content: "Personal career operating system for the next 60 days." },
-      { name: "twitter:description", content: "Personal career operating system for the next 60 days." },
-      { property: "og:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/05840f95-df35-444a-8baf-a8415e64c2a4/id-preview-b6df00d1--bd54c064-6e8e-49cf-948e-22784a7cd1f0.lovable.app-1779617982606.png" },
-      { name: "twitter:image", content: "https://pub-bb2e103a32db4e198524a2e9ed8f35b4.r2.dev/05840f95-df35-444a-8baf-a8415e64c2a4/id-preview-b6df00d1--bd54c064-6e8e-49cf-948e-22784a7cd1f0.lovable.app-1779617982606.png" },
+      { title: "Placement Prep OS — 10-Week Roadmap Tracker" },
+      {
+        name: "description",
+        content:
+          "A video-first, 10-week placement-prep system for Product, Analytics, Tech/GenAI, Business & Domain roles — roadmap, resource library, practice, and progress tracking in one place.",
+      },
+      { property: "og:title", content: "Placement Prep OS" },
+      { name: "twitter:title", content: "Placement Prep OS" },
+      {
+        property: "og:description",
+        content:
+          "A video-first, 10-week placement-prep system with roadmap, resources, and progress tracking.",
+      },
+      {
+        name: "twitter:description",
+        content:
+          "A video-first, 10-week placement-prep system with roadmap, resources, and progress tracking.",
+      },
+      { property: "og:image", content: "/planning-whiteboard.png" },
+      { name: "twitter:image", content: "/planning-whiteboard.png" },
       { name: "twitter:card", content: "summary_large_image" },
       { property: "og:type", content: "website" },
     ],

@@ -8,12 +8,27 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Badge } from "@/components/ui/badge";
-import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
+import {
+  Select,
+  SelectContent,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from "@/components/ui/select";
 import { useCareerStore } from "@/lib/store";
 
 export const Route = createFileRoute("/notes")({ component: Page });
 
-const tags = ["General", "AI", "PM", "Adobe", "Interview", "Reflection"];
+const tags = [
+  "General",
+  "Product",
+  "Analytics",
+  "Tech & GenAI",
+  "Business",
+  "Domain",
+  "Interview",
+  "Reflection",
+];
 
 function Page() {
   const journal = useCareerStore((s) => s.journal);
@@ -36,7 +51,7 @@ function Page() {
       <PageHeader
         eyebrow="Capture"
         title="Notes & Journal"
-        description="Quick capture, weekly reflections, internship learnings. Local + private."
+        description="Quick capture, weekly reflections, and things you don't want to forget before an interview. Local + private."
       />
 
       <Card className="mb-6 p-5">
@@ -54,9 +69,15 @@ function Page() {
         />
         <div className="mt-2 flex items-center justify-between border-t pt-3">
           <Select value={tag} onValueChange={setTag}>
-            <SelectTrigger className="h-8 w-36 text-xs"><SelectValue /></SelectTrigger>
+            <SelectTrigger className="h-8 w-36 text-xs">
+              <SelectValue />
+            </SelectTrigger>
             <SelectContent>
-              {tags.map((t) => <SelectItem key={t} value={t}>{t}</SelectItem>)}
+              {tags.map((t) => (
+                <SelectItem key={t} value={t}>
+                  {t}
+                </SelectItem>
+              ))}
             </SelectContent>
           </Select>
           <Button onClick={submit} size="sm">
@@ -77,16 +98,28 @@ function Page() {
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-center gap-2">
                   <h3 className="text-sm font-semibold">{e.title}</h3>
-                  {e.tag && <Badge variant="secondary" className="text-[10px]">{e.tag}</Badge>}
+                  {e.tag && (
+                    <Badge variant="secondary" className="text-[10px]">
+                      {e.tag}
+                    </Badge>
+                  )}
                   <span className="text-[11px] text-muted-foreground">
-                    {new Date(e.date).toLocaleString("en-US", { dateStyle: "medium", timeStyle: "short" })}
+                    {new Date(e.date).toLocaleString("en-US", {
+                      dateStyle: "medium",
+                      timeStyle: "short",
+                    })}
                   </span>
                 </div>
                 {e.body && (
                   <p className="mt-2 whitespace-pre-wrap text-sm text-muted-foreground">{e.body}</p>
                 )}
               </div>
-              <Button variant="ghost" size="icon" className="h-7 w-7 shrink-0" onClick={() => del(e.id)}>
+              <Button
+                variant="ghost"
+                size="icon"
+                className="h-7 w-7 shrink-0"
+                onClick={() => del(e.id)}
+              >
                 <Trash2 className="h-3.5 w-3.5" />
               </Button>
             </div>

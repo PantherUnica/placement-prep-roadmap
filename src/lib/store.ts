@@ -17,6 +17,7 @@ interface CareerState {
   statuses: Record<string, Status>;
   journal: JournalEntry[];
   streak: { lastDate: string | null; count: number };
+  reviewedAt: Record<string, string>; // id -> ISO date of last revision
 
   toggleCheck: (id: string) => void;
   setNote: (id: string, value: string) => void;
@@ -24,6 +25,7 @@ interface CareerState {
   addJournal: (entry: Omit<JournalEntry, "id" | "date"> & { date?: string }) => void;
   deleteJournal: (id: string) => void;
   pingStreak: () => void;
+  markReviewed: (id: string) => void;
   resetAll: () => void;
 }
 
@@ -35,13 +37,11 @@ export const useCareerStore = create<CareerState>()(
       statuses: {},
       journal: [],
       streak: { lastDate: null, count: 0 },
+      reviewedAt: {},
 
-      toggleCheck: (id) =>
-        set((s) => ({ checks: { ...s.checks, [id]: !s.checks[id] } })),
-      setNote: (id, value) =>
-        set((s) => ({ notes: { ...s.notes, [id]: value } })),
-      setStatus: (id, status) =>
-        set((s) => ({ statuses: { ...s.statuses, [id]: status } })),
+      toggleCheck: (id) => set((s) => ({ checks: { ...s.checks, [id]: !s.checks[id] } })),
+      setNote: (id, value) => set((s) => ({ notes: { ...s.notes, [id]: value } })),
+      setStatus: (id, status) => set((s) => ({ statuses: { ...s.statuses, [id]: status } })),
       addJournal: (entry) =>
         set((s) => ({
           journal: [
@@ -55,8 +55,9 @@ export const useCareerStore = create<CareerState>()(
             ...s.journal,
           ],
         })),
-      deleteJournal: (id) =>
-        set((s) => ({ journal: s.journal.filter((j) => j.id !== id) })),
+      deleteJournal: (id) => set((s) => ({ journal: s.journal.filter((j) => j.id !== id) })),
+      markReviewed: (id) =>
+        set((s) => ({ reviewedAt: { ...s.reviewedAt, [id]: new Date().toISOString() } })),
       pingStreak: () =>
         set((s) => {
           const today = new Date().toISOString().slice(0, 10);
@@ -74,6 +75,7 @@ export const useCareerStore = create<CareerState>()(
           statuses: {},
           journal: [],
           streak: { lastDate: null, count: 0 },
+          reviewedAt: {},
         }),
     }),
     {

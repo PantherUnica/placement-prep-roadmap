@@ -9,55 +9,27 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
-import { Route as ResourcesRouteImport } from './routes/resources'
-import { Route as ProgressRouteImport } from './routes/progress'
-import { Route as PmRoadmapRouteImport } from './routes/pm-roadmap'
-import { Route as PlacementsRouteImport } from './routes/placements'
-import { Route as NotesRouteImport } from './routes/notes'
-import { Route as ExecutionRouteImport } from './routes/execution'
-import { Route as AnalyticsRouteImport } from './routes/analytics'
-import { Route as AiRoadmapRouteImport } from './routes/ai-roadmap'
-import { Route as AdobeRouteImport } from './routes/adobe'
 import { Route as IndexRouteImport } from './routes/index'
+import { Route as AdobeRouteImport } from './routes/adobe'
+import { Route as AiRoadmapRouteImport } from './routes/ai-roadmap'
+import { Route as AnalyticsRouteImport } from './routes/analytics'
+import { Route as BusinessRouteImport } from './routes/business'
+import { Route as DomainRouteImport } from './routes/domain'
+import { Route as ExecutionRouteImport } from './routes/execution'
+import { Route as InterviewRouteImport } from './routes/interview'
+import { Route as NotesRouteImport } from './routes/notes'
+import { Route as PlacementsRouteImport } from './routes/placements'
+import { Route as PmRoadmapRouteImport } from './routes/pm-roadmap'
+import { Route as ProductRouteImport } from './routes/product'
+import { Route as ProgressRouteImport } from './routes/progress'
+import { Route as ResourcesRouteImport } from './routes/resources'
+import { Route as RevisionRouteImport } from './routes/revision'
+import { Route as RoadmapRouteImport } from './routes/roadmap'
+import { Route as TechRouteImport } from './routes/tech'
 
-const ResourcesRoute = ResourcesRouteImport.update({
-  id: '/resources',
-  path: '/resources',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ProgressRoute = ProgressRouteImport.update({
-  id: '/progress',
-  path: '/progress',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PmRoadmapRoute = PmRoadmapRouteImport.update({
-  id: '/pm-roadmap',
-  path: '/pm-roadmap',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const PlacementsRoute = PlacementsRouteImport.update({
-  id: '/placements',
-  path: '/placements',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const NotesRoute = NotesRouteImport.update({
-  id: '/notes',
-  path: '/notes',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const ExecutionRoute = ExecutionRouteImport.update({
-  id: '/execution',
-  path: '/execution',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AnalyticsRoute = AnalyticsRouteImport.update({
-  id: '/analytics',
-  path: '/analytics',
-  getParentRoute: () => rootRouteImport,
-} as any)
-const AiRoadmapRoute = AiRoadmapRouteImport.update({
-  id: '/ai-roadmap',
-  path: '/ai-roadmap',
+const IndexRoute = IndexRouteImport.update({
+  id: '/',
+  path: '/',
   getParentRoute: () => rootRouteImport,
 } as any)
 const AdobeRoute = AdobeRouteImport.update({
@@ -65,9 +37,79 @@ const AdobeRoute = AdobeRouteImport.update({
   path: '/adobe',
   getParentRoute: () => rootRouteImport,
 } as any)
-const IndexRoute = IndexRouteImport.update({
-  id: '/',
-  path: '/',
+const AiRoadmapRoute = AiRoadmapRouteImport.update({
+  id: '/ai-roadmap',
+  path: '/ai-roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AnalyticsRoute = AnalyticsRouteImport.update({
+  id: '/analytics',
+  path: '/analytics',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const BusinessRoute = BusinessRouteImport.update({
+  id: '/business',
+  path: '/business',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const DomainRoute = DomainRouteImport.update({
+  id: '/domain',
+  path: '/domain',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ExecutionRoute = ExecutionRouteImport.update({
+  id: '/execution',
+  path: '/execution',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const InterviewRoute = InterviewRouteImport.update({
+  id: '/interview',
+  path: '/interview',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const NotesRoute = NotesRouteImport.update({
+  id: '/notes',
+  path: '/notes',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PlacementsRoute = PlacementsRouteImport.update({
+  id: '/placements',
+  path: '/placements',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const PmRoadmapRoute = PmRoadmapRouteImport.update({
+  id: '/pm-roadmap',
+  path: '/pm-roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProductRoute = ProductRouteImport.update({
+  id: '/product',
+  path: '/product',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ProgressRoute = ProgressRouteImport.update({
+  id: '/progress',
+  path: '/progress',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ResourcesRoute = ResourcesRouteImport.update({
+  id: '/resources',
+  path: '/resources',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RevisionRoute = RevisionRouteImport.update({
+  id: '/revision',
+  path: '/revision',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const RoadmapRoute = RoadmapRouteImport.update({
+  id: '/roadmap',
+  path: '/roadmap',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const TechRoute = TechRouteImport.update({
+  id: '/tech',
+  path: '/tech',
   getParentRoute: () => rootRouteImport,
 } as any)
 
@@ -76,24 +118,38 @@ export interface FileRoutesByFullPath {
   '/adobe': typeof AdobeRoute
   '/ai-roadmap': typeof AiRoadmapRoute
   '/analytics': typeof AnalyticsRoute
+  '/business': typeof BusinessRoute
+  '/domain': typeof DomainRoute
   '/execution': typeof ExecutionRoute
+  '/interview': typeof InterviewRoute
   '/notes': typeof NotesRoute
   '/placements': typeof PlacementsRoute
   '/pm-roadmap': typeof PmRoadmapRoute
+  '/product': typeof ProductRoute
   '/progress': typeof ProgressRoute
   '/resources': typeof ResourcesRoute
+  '/revision': typeof RevisionRoute
+  '/roadmap': typeof RoadmapRoute
+  '/tech': typeof TechRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
   '/adobe': typeof AdobeRoute
   '/ai-roadmap': typeof AiRoadmapRoute
   '/analytics': typeof AnalyticsRoute
+  '/business': typeof BusinessRoute
+  '/domain': typeof DomainRoute
   '/execution': typeof ExecutionRoute
+  '/interview': typeof InterviewRoute
   '/notes': typeof NotesRoute
   '/placements': typeof PlacementsRoute
   '/pm-roadmap': typeof PmRoadmapRoute
+  '/product': typeof ProductRoute
   '/progress': typeof ProgressRoute
   '/resources': typeof ResourcesRoute
+  '/revision': typeof RevisionRoute
+  '/roadmap': typeof RoadmapRoute
+  '/tech': typeof TechRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
@@ -101,12 +157,19 @@ export interface FileRoutesById {
   '/adobe': typeof AdobeRoute
   '/ai-roadmap': typeof AiRoadmapRoute
   '/analytics': typeof AnalyticsRoute
+  '/business': typeof BusinessRoute
+  '/domain': typeof DomainRoute
   '/execution': typeof ExecutionRoute
+  '/interview': typeof InterviewRoute
   '/notes': typeof NotesRoute
   '/placements': typeof PlacementsRoute
   '/pm-roadmap': typeof PmRoadmapRoute
+  '/product': typeof ProductRoute
   '/progress': typeof ProgressRoute
   '/resources': typeof ResourcesRoute
+  '/revision': typeof RevisionRoute
+  '/roadmap': typeof RoadmapRoute
+  '/tech': typeof TechRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
@@ -115,36 +178,57 @@ export interface FileRouteTypes {
     | '/adobe'
     | '/ai-roadmap'
     | '/analytics'
+    | '/business'
+    | '/domain'
     | '/execution'
+    | '/interview'
     | '/notes'
     | '/placements'
     | '/pm-roadmap'
+    | '/product'
     | '/progress'
     | '/resources'
+    | '/revision'
+    | '/roadmap'
+    | '/tech'
   fileRoutesByTo: FileRoutesByTo
   to:
     | '/'
     | '/adobe'
     | '/ai-roadmap'
     | '/analytics'
+    | '/business'
+    | '/domain'
     | '/execution'
+    | '/interview'
     | '/notes'
     | '/placements'
     | '/pm-roadmap'
+    | '/product'
     | '/progress'
     | '/resources'
+    | '/revision'
+    | '/roadmap'
+    | '/tech'
   id:
     | '__root__'
     | '/'
     | '/adobe'
     | '/ai-roadmap'
     | '/analytics'
+    | '/business'
+    | '/domain'
     | '/execution'
+    | '/interview'
     | '/notes'
     | '/placements'
     | '/pm-roadmap'
+    | '/product'
     | '/progress'
     | '/resources'
+    | '/revision'
+    | '/roadmap'
+    | '/tech'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
@@ -152,70 +236,28 @@ export interface RootRouteChildren {
   AdobeRoute: typeof AdobeRoute
   AiRoadmapRoute: typeof AiRoadmapRoute
   AnalyticsRoute: typeof AnalyticsRoute
+  BusinessRoute: typeof BusinessRoute
+  DomainRoute: typeof DomainRoute
   ExecutionRoute: typeof ExecutionRoute
+  InterviewRoute: typeof InterviewRoute
   NotesRoute: typeof NotesRoute
   PlacementsRoute: typeof PlacementsRoute
   PmRoadmapRoute: typeof PmRoadmapRoute
+  ProductRoute: typeof ProductRoute
   ProgressRoute: typeof ProgressRoute
   ResourcesRoute: typeof ResourcesRoute
+  RevisionRoute: typeof RevisionRoute
+  RoadmapRoute: typeof RoadmapRoute
+  TechRoute: typeof TechRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
-    '/resources': {
-      id: '/resources'
-      path: '/resources'
-      fullPath: '/resources'
-      preLoaderRoute: typeof ResourcesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/progress': {
-      id: '/progress'
-      path: '/progress'
-      fullPath: '/progress'
-      preLoaderRoute: typeof ProgressRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/pm-roadmap': {
-      id: '/pm-roadmap'
-      path: '/pm-roadmap'
-      fullPath: '/pm-roadmap'
-      preLoaderRoute: typeof PmRoadmapRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/placements': {
-      id: '/placements'
-      path: '/placements'
-      fullPath: '/placements'
-      preLoaderRoute: typeof PlacementsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/notes': {
-      id: '/notes'
-      path: '/notes'
-      fullPath: '/notes'
-      preLoaderRoute: typeof NotesRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/execution': {
-      id: '/execution'
-      path: '/execution'
-      fullPath: '/execution'
-      preLoaderRoute: typeof ExecutionRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/analytics': {
-      id: '/analytics'
-      path: '/analytics'
-      fullPath: '/analytics'
-      preLoaderRoute: typeof AnalyticsRouteImport
-      parentRoute: typeof rootRouteImport
-    }
-    '/ai-roadmap': {
-      id: '/ai-roadmap'
-      path: '/ai-roadmap'
-      fullPath: '/ai-roadmap'
-      preLoaderRoute: typeof AiRoadmapRouteImport
+    '/': {
+      id: '/'
+      path: '/'
+      fullPath: '/'
+      preLoaderRoute: typeof IndexRouteImport
       parentRoute: typeof rootRouteImport
     }
     '/adobe': {
@@ -225,11 +267,109 @@ declare module '@tanstack/react-router' {
       preLoaderRoute: typeof AdobeRouteImport
       parentRoute: typeof rootRouteImport
     }
-    '/': {
-      id: '/'
-      path: '/'
-      fullPath: '/'
-      preLoaderRoute: typeof IndexRouteImport
+    '/ai-roadmap': {
+      id: '/ai-roadmap'
+      path: '/ai-roadmap'
+      fullPath: '/ai-roadmap'
+      preLoaderRoute: typeof AiRoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/analytics': {
+      id: '/analytics'
+      path: '/analytics'
+      fullPath: '/analytics'
+      preLoaderRoute: typeof AnalyticsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/business': {
+      id: '/business'
+      path: '/business'
+      fullPath: '/business'
+      preLoaderRoute: typeof BusinessRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/domain': {
+      id: '/domain'
+      path: '/domain'
+      fullPath: '/domain'
+      preLoaderRoute: typeof DomainRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/execution': {
+      id: '/execution'
+      path: '/execution'
+      fullPath: '/execution'
+      preLoaderRoute: typeof ExecutionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/interview': {
+      id: '/interview'
+      path: '/interview'
+      fullPath: '/interview'
+      preLoaderRoute: typeof InterviewRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/notes': {
+      id: '/notes'
+      path: '/notes'
+      fullPath: '/notes'
+      preLoaderRoute: typeof NotesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/placements': {
+      id: '/placements'
+      path: '/placements'
+      fullPath: '/placements'
+      preLoaderRoute: typeof PlacementsRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/pm-roadmap': {
+      id: '/pm-roadmap'
+      path: '/pm-roadmap'
+      fullPath: '/pm-roadmap'
+      preLoaderRoute: typeof PmRoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/product': {
+      id: '/product'
+      path: '/product'
+      fullPath: '/product'
+      preLoaderRoute: typeof ProductRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/progress': {
+      id: '/progress'
+      path: '/progress'
+      fullPath: '/progress'
+      preLoaderRoute: typeof ProgressRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/resources': {
+      id: '/resources'
+      path: '/resources'
+      fullPath: '/resources'
+      preLoaderRoute: typeof ResourcesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/revision': {
+      id: '/revision'
+      path: '/revision'
+      fullPath: '/revision'
+      preLoaderRoute: typeof RevisionRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/roadmap': {
+      id: '/roadmap'
+      path: '/roadmap'
+      fullPath: '/roadmap'
+      preLoaderRoute: typeof RoadmapRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/tech': {
+      id: '/tech'
+      path: '/tech'
+      fullPath: '/tech'
+      preLoaderRoute: typeof TechRouteImport
       parentRoute: typeof rootRouteImport
     }
   }
@@ -240,13 +380,30 @@ const rootRouteChildren: RootRouteChildren = {
   AdobeRoute: AdobeRoute,
   AiRoadmapRoute: AiRoadmapRoute,
   AnalyticsRoute: AnalyticsRoute,
+  BusinessRoute: BusinessRoute,
+  DomainRoute: DomainRoute,
   ExecutionRoute: ExecutionRoute,
+  InterviewRoute: InterviewRoute,
   NotesRoute: NotesRoute,
   PlacementsRoute: PlacementsRoute,
   PmRoadmapRoute: PmRoadmapRoute,
+  ProductRoute: ProductRoute,
   ProgressRoute: ProgressRoute,
   ResourcesRoute: ResourcesRoute,
+  RevisionRoute: RevisionRoute,
+  RoadmapRoute: RoadmapRoute,
+  TechRoute: TechRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
   ._addFileTypes<FileRouteTypes>()
+
+import type { getRouter } from './router.tsx'
+import type { startInstance } from './start.ts'
+declare module '@tanstack/react-start' {
+  interface Register {
+    ssr: true
+    router: Awaited<ReturnType<typeof getRouter>>
+    config: Awaited<ReturnType<typeof startInstance.getOptions>>
+  }
+}
