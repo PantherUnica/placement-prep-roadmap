@@ -51,7 +51,6 @@ export const priorityMeta: Record<Priority, { label: string; cls: string }> = {
   optional: { label: "Optional", cls: "bg-muted text-muted-foreground" },
 };
 
-
 export interface Milestone {
   id: string;
   week: string;
